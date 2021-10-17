@@ -1,0 +1,154 @@
+.slider {
+    padding: 30px 0px 30px;
+    max-width: 760px;
+    border: 4px rgb(116, 113, 113) solid;
+    margin: 0 auto;
+    background-color: rgb(70, 70, 70);
+    border-radius: 20px;
+}
+
+.slider-block {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* SLIDER */
+
+.container {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.slider-block input {
+    display: none;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 400%;
+    position: relative;
+    transition: 1s;
+}
+
+.slide {
+    width: 25%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* NAME-CONTROL PANEL */
+
+.name-contolPanel-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+
+.name-contolPanel-wrapper label {
+    display: none;
+}
+
+.slide-name label {
+    font-size: 24px;
+    color: white;
+}
+
+.controls {
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls label {
+    display: block;
+    width: 27px;
+    height: 27px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls label:hover {
+    cursor: pointer;
+}
+
+.controls label:hover span {
+    background-color: white;
+    border: white solid 2px;
+    transition: 0.4s;
+}
+
+.controls label:active span {
+    background-color: rgb(252, 222, 222);
+    border: rgb(252, 222, 222) solid 3px;
+    transition: 0.4s;
+}
+
+.controls span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    border: rgb(154, 154, 255) solid 2px;
+    background-color: rgb(154, 154, 255);
+}
+
+#switch1:checked~.name-contolPanel-wrapper #controls label:nth-child(1) span, #switch2:checked~.name-contolPanel-wrapper #controls label:nth-child(2) span, #switch3:checked~.name-contolPanel-wrapper #controls label:nth-child(3) span, #switch4:checked~.name-contolPanel-wrapper #controls label:nth-child(4) span {
+    background-color: rgb(70, 70, 70);
+    transition: 0.4s;
+}
+
+#switch1:checked~.name-contolPanel-wrapper #controls label:nth-child(1):hover span, #switch2:checked~.name-contolPanel-wrapper #controls label:nth-child(2):hover span, #switch3:checked~.name-contolPanel-wrapper #controls label:nth-child(3):hover span, #switch4:checked~.name-contolPanel-wrapper #controls label:nth-child(4):hover span {
+    border: white solid 2px;
+    background-color: rgb(70, 70, 70);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#switch1:checked~.name-contolPanel-wrapper #slide-name label:nth-child(1), #switch2:checked~.name-contolPanel-wrapper #slide-name label:nth-child(2), #switch3:checked~.name-contolPanel-wrapper #slide-name label:nth-child(3), #switch4:checked~.name-contolPanel-wrapper #slide-name label:nth-child(4) {
+    display: block;
+    transition: 2s;
+}
+
+#switch1:checked~.container .slider-wrapper {
+    left: 0px;
+}
+
+#switch2:checked~.container .slider-wrapper {
+    left: -100%;
+}
+
+#switch3:checked~.container .slider-wrapper {
+    left: -200%;
+}
+
+#switch4:checked~.container .slider-wrapper {
+    left: -300%;
+}
+
+@media (max-width: 480px) {
+    .name-contolPanel-wrapper {
+        flex-direction: column-reverse;
+        row-gap: 5px;
+        height: auto;
+    }
+    .slider-block {
+        max-width: 658px;
+        margin: 0px 20px;
+    }
+    .slide-name label {
+        font-size: 18px;
+        color: white;
+    }
+}
